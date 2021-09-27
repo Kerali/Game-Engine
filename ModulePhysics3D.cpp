@@ -19,21 +19,12 @@ ModulePhysics3D::ModulePhysics3D(Application* app, bool start_enabled) : Module(
 {
 	debug = true;
 
-	collision_conf = new btDefaultCollisionConfiguration();
-	dispatcher = new btCollisionDispatcher(collision_conf);
-	broad_phase = new btDbvtBroadphase();
-	solver = new btSequentialImpulseConstraintSolver();
-	debug_draw = new DebugDrawer();
 }
 
 // Destructor
 ModulePhysics3D::~ModulePhysics3D()
 {
 	delete debug_draw;
-	delete solver;
-	delete broad_phase;
-	delete dispatcher;
-	delete collision_conf;
 }
 
 // Render not available yet----------------------------------
